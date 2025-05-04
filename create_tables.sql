@@ -43,7 +43,7 @@ BEGIN
 END$$
 DELIMITER ;
 
--- Procedure para criar uma vinícola com região (se não existir)
+-- Procedure para criar uma vinícola com região, se não existir
 DELIMITER $$
 CREATE PROCEDURE create_winery_with_region(
   IN p_winery_name        VARCHAR(100),
