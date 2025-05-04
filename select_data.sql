@@ -53,3 +53,20 @@ SELECT wine_name, wine_year
 FROM wines
 WHERE wine_year > 2022
 ORDER BY wine_year DESC;
+
+-- Verifica se há vinhos que referenciam uma vinícola que não existe
+SELECT 
+    *
+FROM
+    wines w
+        LEFT JOIN
+    wineries wi ON w.winery_id = wi.winery_id
+WHERE
+    wi.winery_id IS NULL;
+
+-- Verifica se há vinícolas que referenciam uma região que não existe
+SELECT *
+FROM wineries wi
+LEFT JOIN regions r ON wi.region_id = r.region_id
+WHERE r.region_id IS NULL;
+
